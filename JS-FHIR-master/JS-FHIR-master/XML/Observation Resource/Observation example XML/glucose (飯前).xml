@@ -1,0 +1,63 @@
+<Observation xmlns="http://hl7.org/fhir"> 
+	<id value=""/>	
+	<status value="preliminary"/>   
+	<category> 
+		<coding> 
+			<system value="http://hl7.org/fhir/observation-category"/> 
+			<code value="laboratory"/> 
+		</coding> 
+	</category>
+	<code> 
+		<coding> 
+			<system value="http://loinc.org"/> 
+			<code value="15074-8"/> 
+			<display value="Glucose [Moles/volume] in Blood"/> 
+		</coding> 
+	</code>    
+	<subject> 
+		<reference value="Patient/9952"/> 
+		<display value="Yi-Tsung Yi"/>
+	</subject> 
+	<effectiveDateTime value="2017-11-01T08:09:26"/>    
+	<interpretation> 
+		<coding> 
+		  <system value="http://hl7.org/fhir/v2/0078"/> 
+		  <code value="N"/> 
+		</coding> 
+	</interpretation>
+	<device>
+		<reference value="Device/4997"/>   
+	</device>
+	<component> 
+		<code> 
+			<coding> 
+				<system value="http://loinc.org"/> 
+				<code value="88365-2"/> 
+				<display value="Glucose [Mass/volume] in Blood --pre-meal"/> 
+			</coding> 
+		</code> 
+		<valueQuantity> 
+			<value value="90"/> 
+			<unit value="mg/dL"/> 
+		</valueQuantity>
+		<interpretation> 
+			<coding> 
+				<system value="http://hl7.org/fhir/v2/0078"/> 
+				<code value="N"/> 
+			</coding> 
+		</interpretation> 
+		<referenceRange>  
+			<low> 
+				<value value="70"/> 
+				<unit value="mg/dL"/> 
+			</low> 
+			<high> 
+				<value value="100"/> 
+				<unit value="mg/dL"/> 
+			</high>  
+		</referenceRange> 		
+	</component> 
+</Observation> 
+
+
+

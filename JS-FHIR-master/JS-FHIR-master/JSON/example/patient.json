@@ -1,0 +1,32 @@
+{ "resourceType": "Patient",
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "text": "Computer-Stored Abulatory Records (COSTAR)"
+      },
+      "value": "10006579",
+      "assigner": {
+        "display": "AccMgr"
+      }
+    }
+  ],
+  "active": true,
+   "name": [
+    {
+      "family": "蕭嘉宏",
+      "given": [
+        "Homer",
+        "J"
+      ]
+    }
+  ],
+  "gender": "unknown",
+  "birthDate": "1924-10-10",
+  "deceasedBoolean": false,
+  "managingOrganization": {
+          "reference": "Organization/1905582"
+        }
+}
+
+1729074

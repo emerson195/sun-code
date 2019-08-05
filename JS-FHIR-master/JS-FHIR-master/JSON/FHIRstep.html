@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>FHIR data post and get steps	</title>
+
+	<script src="setting.js"></script>
+    <script src="HTTP2019.js"></script>
+
+</head>
+<body style="height: 780px">
+
+<h2>FHIR 資料產生、上傳、下載、處理步驟 </h2>
+<p>
+  醫療作業流程產生的資訊存取。例如存取:encounter(就醫)、observation(檢測結果)。可存取 XML or JSON 格式的資料   </p>  
+ 
+<h3>FHIR 資料產生及上傳 </h3>    
+    <a href="postSPO2.html"> SPO2 FHIR 資料產生及上傳範例程式</a>
+    <br />  <br />
+注意事項
+  <ul>
+　<li>FHIR resource 有許多選擇性欄位。需一應用情境，確立上傳及接收使用到那些欄位，並且 code 編碼規範要一致。(後續加 code 編碼說明。</li>
+　<li>通常會 reference 到 subect id (所以 FHIR server 上必須先建立 patient data) </li>
+　<li>上傳前 XMLHTTPRequest mine content type 要設對。  HttpObj.setRequestHeader("Content-type", "application/json+fhir");  或 application/fhir+xml </li>
+  </ul>
+  
+<h3>FHIR 查詢及處理 </h3>    
+    <a href="getResource.html"> SPO2 FHIR 資料查詢範例程式</a>    <br />
+    <a href="getFHIR2Table.html"> FHIR patient 資料查詢及表格呈現範例程式</a>    <br />  <br />
+注意事項
+  <ul>
+　<li>通常會用 patient id 調閱病人所屬臨床醫療資訊。例如:調閱病人就醫資訊。調愈病人近期檢查資訊。 後續提供時間、特定檢查項目 指定第幾筆範圍的程式範例。  <a href="https://www.hl7.org/fhir/search.html"> FHIR search 查詢 API</a>　</li>
+　<li>須等到 HTTP get data 完成 (HttpObj.readyState === 4) 確定資料下載完成，才呼叫資料處理程式。</li>
+　<li>下載的資料會以 boundle 打包，會註明合乎條件總筆數。會先回應前 50 筆，每一筆包在 entry 當中。處理方式參考 FHIR patient 表格呈現範例  </li>
+　<li>下載資料可能是其他系統產生，選擇的欄位及編碼機制可能不一致。程式中需加入檢查及防錯的機制 </li>
+  </ul>
+  
+  
+  
+</body>
+
+</html>

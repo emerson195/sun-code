@@ -1,0 +1,20 @@
+
+{
+        "resourceType": "Organization",
+        "name": "TCSH 魔電監獄島附設醫院",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+886 278561234",
+            "use": "mobile"
+          },
+          {
+            "system": "email",
+            "value": "Rad1@gms.tcu.edu.tw",
+            "use": "work"
+          }
+        ],
+        "partOf": {
+          "reference": "Organization/1856069"
+        }
+}

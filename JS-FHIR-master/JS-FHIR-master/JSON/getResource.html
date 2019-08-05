@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #Button1 {
+            height: 43px;
+            width: 140px;
+        }
+        #Button2 {
+            height: 43px;
+            width: 140px;
+        }
+        #Button3 {
+            height: 43px;
+            width: 140px;
+        }		
+        #TextArea1 {
+            height: 651px;
+            width: 1186px;
+        }
+        #TextArea2 {
+            height: 256px;
+            width: 500px;
+        }
+    </style>
+    <script src="HTTP2019.js"></script>
+     <script>
+                      
+            function getData() {
+			// alert("aaaa");
+                HTTPGetData("http://hapi.fhir.org/baseDstu3/Observation/1324107/_history/1?_pretty=true");             
+            }
+
+            function showData() {
+               // alert(ret);
+                document.getElementById("TextArea1").innerText = ret;
+            }
+			
+        </script>	
+	
+	
+</head>
+<body>
+
+    <p>
+        <input id="Button1" onclick="getData()"  type="button" value="getData" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="Button2" onclick="showData();" type="button" value="ShowData" /></p>
+
+    <p>
+        <textarea id="TextArea1" name="S1"></textarea></p>
+        </p>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Observation xmlns="http://hl7.org/fhir"> 
+   <id value=""/>	
+   <status value="preliminary"/>   
+   <category> 
+		<coding> 
+			<system value="http://hl7.org/fhir/observation-category"/> 
+			<code value="vital-signs"/>  
+		</coding> 
+   </category>
+   <code> 
+		<coding> 
+			<system value="http://loinc.org"/> 
+			<code value="8310-5"/> 
+			<display value="Body temperature"/> 
+		</coding> 
+   </code>     
+   <subject> 
+		<reference value="Patient/9952"/> 
+		<display value="Yi-Tsung Yi"/>
+   </subject> 
+   <effectiveDateTime value="2017-11-01T07:09:26"/> 
+   <valueQuantity> 
+		<value value="37"/> 
+		<unit value="C"/> 
+   </valueQuantity> 
+   <device>
+		<reference value="Device/4998"/>
+		<display value="Thermometer"/>
+   </device>
+</Observation> 
+
+
+
+
+

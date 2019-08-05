@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title> BMI </title>
+
+
+<style>
+table {
+  width:50%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
+}
+</style>
+
+
+ 
+<script>
+    function bmicc(){
+        var hig=document.getElementById("hight").value
+        var wei=document.getElementById("we").value
+        var bmic=wei/((hig/100)*(hig/100))
+        if(hig<30 || hig>300)
+        {
+            document.getElementById("BMI").innerHTML="身高值錯誤或未在30~300中間";
+        }
+        else if(wei<2 || wei>400)
+        {
+            document.getElementById("BMI").innerHTML="身高值錯誤或未在2~400中間";
+        }
+        else
+        {
+            document.getElementById("BMI").innerHTML="BMI值為："+bmic;
+        }
+    }
+</script>
+</head>　
+				
+<body>
+    
+<form id="form1"  ">
+
+
+<table bgcolor="white">
+  <tr>
+    <th>姓名:<br>
+
+  	<input type="text" name="pateintName" value="" id="pateintName"></th>
+    <th>性別:
+ <input type="radio" name="gender" value="male" checked id="gender"> 男
+  <input type="radio" name="gender" value="female" id="Radio1"> 女</th> 
+   <th><label for="bookdate">出生年月日：</label>
+  <input type="text" id="bookdate" placeholder="2014-09-18"></th>
+  </tr>
+</table>
+
+
+<table bgcolor="white">
+  <tr>
+    <th>身高:<br>
+    <input type="text" name="hight" value="" id="hight">公分</th>
+    <th>體重:<br>
+    <input type="text" name="we" value="" id="we">公斤</th>
+  </tr>
+</table>
+<table bgcolor="white" bgcolor="white">
+  <tr>
+  <th>
+  <input type="submit" name="button" id="button" value="BMI計算" onClick="bmicc()"/>
+ </th>
+
+    <th>我的BMI值<br>
+ <input type="text"  value="" id="BMI"></th>
+  </tr>
+</table>
+
+<input type="reset" value="清除">
+<input type="submit" name="button" id="Submit1" value="送出" onClick="check()"/>
+<input type="submit" name="button1" id="button1" value="送出功能二" onClick="check2()"/>
+<input type="button" value="自動填入" onclick="ShowAnswer()">
+
+
+</form> 
+
+</body>
+</html>

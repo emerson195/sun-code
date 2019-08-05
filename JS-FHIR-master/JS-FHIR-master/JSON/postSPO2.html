@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+   
+	<script src="setting.js"></script>
+    <script src="HTTP2019.js"></script>
+ <script>
+   var myObj =    {
+    "resourceType": "Observation",
+    "identifier": [
+    {
+        "system": "http://goodcare.org/observation/id",
+        "value": "o1223435-10"
+    }
+   ],
+ 
+  "status": "final",
+ 
+  "code": {
+      "coding": [
+        {
+            "system": "http://loinc.org",
+            "code": "2708-6",
+            "display": "Oxygen saturation in Arterial blood"
+        },
+        {
+            "system": "http://loinc.org",
+            "code": "59408-5",
+            "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+        },
+        {
+            "system": "urn:iso:std:iso:11073:10101",
+            "code": "150456",
+            "display": "MDC_PULS_OXIM_SAT_O2"
+        }
+      ]
+  },
+  "subject": {
+      "reference": "Patient/1856173"
+  },
+  "effectiveDateTime": "2018-12-05T09:30:10+01:00",
+  "valueQuantity": {
+      "value": 95,
+      "unit": "%",
+      "system": "http://unitsofmeasure.org",
+      "code": "%"
+  }
+}
+
+
+   
+	 
+   function postData() {
+     /*   var data = myObj.valueQuantity.value;
+       alert(data);  */
+       myObj.valueQuantity.value = document.getElementById("SPO2").value;
+       // subject id 1856172  
+       myObj.subject.reference = "Patient/" + "1856172";
+       myObj.effectiveDateTime = "2019-12-05T09:30:10";
+       var jsonStr = JSON.stringify(myObj);
+     //  alert(jsonStr);
+
+       var apiURL;
+       apiURL = FHIRrootURL + '/' + "Observation";
+       alert(apiURL);
+       HTTPPostData(apiURL, jsonStr);
+     
+	
+	}
+
+
+</script>	
+	
+</head>
+<body style="height: 780px">
+
+   
+     <input id="Button1" onclick="postData()"  type="button" value="postData" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+      SPO2: <input type="text" id="SPO2" /> % <br/>
+
+  
+  
+</body>
+
+</html>

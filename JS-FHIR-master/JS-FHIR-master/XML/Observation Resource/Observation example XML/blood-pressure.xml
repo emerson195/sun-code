@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Observation xmlns="http://hl7.org/fhir">  
+	<id value=""/>	
+	<status value="preliminary"/>   
+	<category> 
+		<coding> 
+		  <system value="http://hl7.org/fhir/observation-category"/> 
+		  <code value="vital-signs"/> 
+		</coding> 
+	</category>
+	<code> 
+		<coding> 
+			<system value="http://loinc.org"/> 
+			<code value="85354-9"/> 
+			<display value="Bood pressure panel with all children optional"/> 
+		</coding> 
+	</code>      
+	<subject> 
+		<reference value="Patient/9952"/> 
+		<display value="Yi-Tsung Yi"/>
+	</subject> 
+	<effectiveDateTime value="2018-04-21T07:06:02"/> 
+	<device>
+		<reference value="Device/4996"/>   
+	</device>  
+	<interpretation> 
+		<coding> 
+		  <system value="http://hl7.org/fhir/v2/0078"/> 
+		  <code value="L"/> 
+		</coding> 
+    </interpretation> 
+	<component> 
+		<code> 
+			<coding> 
+				<system value="http://loinc.org"/> 
+				<code value="8480-6"/> 
+				<display value="Systolic blood pressure"/> 
+			</coding> 
+		</code> 
+		<valueQuantity> 
+		    <value value="107"/> 
+		    <unit value="mmHg"/> 
+		</valueQuantity>
+		<interpretation> 
+			<coding> 
+				<system value="http://hl7.org/fhir/v2/0078"/> 
+				<code value="N"/> 
+			</coding> 
+		</interpretation> 
+		<referenceRange>  
+			<high> 
+				<value value="120"/> 
+				<unit value="mmHg"/> 
+			</high> 
+		</referenceRange> 		
+	</component> 
+    <component> 
+		<code> 
+			<coding> 
+				<system value="http://loinc.org"/> 
+				<code value="8462-4"/> 
+				<display value="Diastolic blood pressure"/> 
+			</coding> 
+		</code> 
+		<valueQuantity> 
+			<value value="60"/> 
+			<unit value="mmHg"/> 	
+		</valueQuantity> 
+		<interpretation> 
+			<coding> 
+				<system value="http://hl7.org/fhir/v2/0078"/> 
+				<code value="L"/> 
+			</coding> 
+		</interpretation> 
+		<referenceRange>  
+			<high> 
+				<value value="80"/> 
+				<unit value="mmHg"/> 
+			</high> 
+	    </referenceRange> 
+	</component> 
+</Observation> 
+
+
+
+QQQWER

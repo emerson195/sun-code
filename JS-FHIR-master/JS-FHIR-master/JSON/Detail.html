@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0048)https://107316101.github.io/JavaScript1/HtmlPage -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title></title>
+    <style type="text/css">
+        #printf {
+            height: 154px;
+            width: 404px;
+        }
+    </style>
+<script src="Cookie.js"></script> 
+</head>
+     
+<body>
+  <form action="http://203.64.84.113/x/RQ_RS.aspx" method="post">
+      <b><font size="6" face="DFKai-sb">理學檢查評估</font></b><font face="DFKai-sb">
+
+  <br/><br/>名字:
+  <input type="text" name="pateintName" value="Mickey" id="name"/>  <br/><br/>
+
+ 性別:
+  <input type="radio" name="gender" value="male" id="gm" checked=""/> Male
+  <input type="radio" name="gender" value="female" id="gf"/> Female
+  <br/>
+
+ 體重：<input type="text" id="weight"/><br/>
+ 身高：<input type="text" id="height"/><br/>
+      <br />
+      同學們可進一步擴充，組合選擇的病人資料與填寫的身高體重資料，形成 JSON 資料上傳伺服器<br/>
+        
+     
+<p><input id="Button4" type="button" value="送出資料" onclick="return get()" /></p><br/>
+    
+  <script>
+      document.getElementById("name").value = getCookie("patientName");
+
+      var gender;
+      gender = getCookie("gender");
+      if (gender == "male")
+      { document.getElementById("gm").checked = true; }
+      else
+      { document.getElementById("gf").checked = true; }
+
+ 
+    </script>
+  
+
+</font></form></body>
+
+
+
+</html>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+  
+ <style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+<script src="HTTP2019.js"></script>
+ <script src="Cookie.js"></script> 
+ <script src="addTableEvent.js"></script>
+</head>
+<body>
+
+    <p>
+        <input id="Button1" onclick="getData();"  type="button" value="getData" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+        <table id = "t1"   />
+       
+
+</body>
+        <script>
+            function rowClickFunction(cid) {
+                //  alert("id:" + cid);
+                setCookie("patientID", cid, 1);
+
+                // match clicked id with JSON data id
+                for (var i = 0; i < myObj.entry.length; i++) {
+                    if (cid == myObj.entry[i].resource.id) {
+                        //  alert(myObj.entry[i].resource.name[0].text);
+                        setCookie("patientName", myObj.entry[i].resource.name[0].text, 1);
+                        setCookie("gender", myObj.entry[i].resource.gender, 1);
+                    }
+                }
+                // window.open("Detail.html");
+                window.open("BMI.html");
+            }
+          
+            function getData() {
+                HTTPGetData("http://hapi.fhir.org/baseDstu3/Patient?organization=1856069");
+             //   showData(ret);
+              //  HTTPGetData("Get.aspx?id=newPatient");
+            }
+            function callBack(ret) {
+                var myObj;
+                showData(ret);
+
+            }
+
+            function showData(ret) {
+                // alert(ret);
+                // ret defined in HTTP2019.js for keep the response value
+               // alert("aaa");
+                myObj = JSON.parse(ret);
+                var tableStr = "<tr> <th >id</th><th>name</th><th>gender</th><th>birthDate</th></tr>";
+
+                for (i = 0; i < myObj.entry.length; i++) {
+                    // alert(myObj[i].name);
+                    var trStr = "<tr>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj.entry[i].resource.id;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj.entry[i].resource.name[0].text;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj.entry[i].resource.gender;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj.entry[i].resource.birthDate;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "</tr>";
+                    tableStr = tableStr + trStr;
+                }
+
+                document.getElementById("t1").innerHTML = tableStr;
+                addRowHandlers("t1");   // add event to table t1
+                      
+            }
+        </script>
+</html>
