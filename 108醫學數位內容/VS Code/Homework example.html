@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+  
+ <style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+<script src="HTTP2019.js"></script>
+</head>
+<body>
+ <h3>  主從網頁介面 Master-Detail(常見之資訊處理模式) </h3>
+ <p>如門診就醫、線上訂單、班級同學成績，選擇主網頁項目，進一步在細部網頁檢視或處理資料</p>
+ <p><input id="Button2" onclick="showData();" type="button" value="ShowData" /></p>
+   <table id = "t1"   />
+       
+
+</body>
+   <script src="Cookie.js"></script> 
+   <script src="addTableEvent.js"></script>
+   <script>
+       var myObj = [{"id": "123", "name": "丁大餅", "telecom": "0967888", "gender": "male", "birthDate": "1974-01-25"},
+                    {"id": "234", "name": "林志玲", "telecom": "09888888", "gender": "female", "birthDate":"1974-12-12" },
+                    {"id": "543", "name": "韓光頭", "telecom": "12345678", "gender": "male", "birthDate": "1970-12-05" },
+                    {"id": "133", "name": "郭億萬", "telecom": "12345678", "gender": "male", "birthDate": "1968-08-25" }];
+
+       function rowClickFunction(cid) {
+                //  alert("id:" + cId);
+                setCookie("patientID", cid, 1);
+
+                // match clicked id with JSON data id
+                for (var i = 0; i < myObj.length; i++) {
+                    if (cid == myObj[i].id) {
+					  //  alert(myObj[i].name);
+                        setCookie("patientName", myObj[i].name, 1);
+                        setCookie("gender", myObj[i].gender, 1);
+                    }
+                }
+                window.open("Detail.html");
+            }
+     
+          
+
+       function showData() {
+               //  alert(myObj[1].name);
+                // alert(ret);
+                // ret defined in HTTP2019.js for keep the response value
+                //  var myObj = JSON.parse(ret);
+                //  alert(myObj.length);
+                
+              
+                var tableStr = "<tr><th>id</th><th>name</th> <th >telecom</th><th>gender</th><th>birthDate</th></tr>";
+                for (i = 0; i < myObj.length; i++) {
+                     // alert(myObj[i].name);
+                    var trStr = "<tr>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].id;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].name;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].telecom;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].gender;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].birthDate;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "</tr>";
+                    tableStr = tableStr + trStr;
+                }
+            
+               
+                document.getElementById("t1").innerHTML = tableStr;
+                addRowHandlers("t1");   // add event to table t1
+              
+            }  
+        </script>
+</html>

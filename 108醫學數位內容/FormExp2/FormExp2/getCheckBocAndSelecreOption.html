@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>630美食工坊</title>
+</head>
+<script>
+function click1() 
+ {var ret;
+   var c;
+   // get checkbox
+  c = document.getElementById("c1");
+  if(c.checked == true) {
+  ret =    document.getElementById("c1").value
+  alert(ret);  }
+
+  c = document.getElementById("c2");
+  if(c.checked == true) {
+  ret  =    document.getElementById("c2").value
+  alert(ret);  }
+
+  c = document.getElementById("c3");
+  if(c.checked == true) {
+  ret  =    document.getElementById("c3").value
+  alert(ret); 
+  } 
+ // get selected option
+  ret = document.getElementById("mySelect").value;
+  alert(ret);
+  
+   }
+
+
+
+
+</script>
+<body >
+    <form id="orderForm1"  name="form1" >
+    
+        <h2>訂購表在這邊哦~~~</h2>
+
+        熔岩爆漿巧克力蛋糕(一組4個)
+        <select id="mySelect" name="cakeAmount">
+            <option value="1" selected>1組($100)</option>
+            <option value="2">2組($196)</option>
+            <option value="3">3組($288)</option>
+            <option value="4">4組($376)</option>
+            <option value="5">5組($460)</option>
+            <option value="6">6組($540)</option>
+            <option value="7">7組($616)</option>
+            <option value="8">8組($688)</option>
+            <option value="9">9組($756)</option>
+            <option value="10">10組($800)</option>
+            <option value="12">12組($0)</option>
+        </select><br>
+
+     
+        興趣:<input id ="c1" type="checkbox" name="inte1" value="1">打球
+	        <input id = "c2" type="checkbox" name="inte2" value="2">爬山
+            <input id = "c3" type="checkbox" name="inte3" value="3">電腦
+            <input id = "c4" type="checkbox" name="inte4" value="4">聽音樂
+            <br>
+        
+        <button onclick="click1()" style="height: 29px; width: 103px">送出</button>
+       
+        </form>
+     
+
+</body>
+</html>

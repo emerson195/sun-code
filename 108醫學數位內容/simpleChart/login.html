@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        #Button1 {
+            height: 45px;
+            width: 260px;
+        }
+        #stdID {
+            width: 338px;
+        }
+        #stdName {
+            width: 326px;
+        }
+        #stdLocation {
+            width: 317px;
+        }
+    </style>
+<script src="Cookie.js"></script> 
+<script >
+  
+    function chkLogin() {
+        var stdLocation, stdName;
+        stdLocation = document.getElementById("stdLocation").value;
+        //alert(stdLocation);
+        stdName = document.getElementById("stdName").value;
+       // alert(stdName);
+        if (stdLocation == "" || stdName == "") alert("請輸入居住地點及暱稱");
+        else {
+              
+            setCookie("stdLocation", stdLocation, 1);
+               setCookie("stdName", stdName, 1);
+              window.open("input.html");
+			  //window.open("uploadText2.html");
+             // document.getElementById("L1").hidden = false;
+        }
+
+    }
+</script> 
+ 
+</head>
+<body>
+    <p>
+        &nbsp;</p>
+    <p>
+        地點:
+        <input id="stdLocation" type="text" /></p>
+    <p>
+        暱稱:
+        <input id="stdName" type="text" /></p>
+    <p>
+        <input id="Button1" onclick="chkLogin()" type="button" value="button" /></p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+
+</body>
+</html>

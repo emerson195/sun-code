@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>630美食工坊</title>
+   
+    <script>
+     function    getData()
+        { var ret1, ret2;
+          var v1;
+          
+          ret1 = document.getElementById("g1").checked;
+          ret2 = document.getElementById("g2").checked;
+          // true false 
+          if(ret1 == true)
+            {v1 =  document.getElementById("g1").value;
+               }
+          else if (ret2 == true)   
+            {v1 =  document.getElementById("g2").value;
+            }  
+          else  
+            {v1 =  document.getElementById("g3").value;
+              } 
+         // alert(v1 );   
+          var myObj = {"name": "", "TEL": "", "gender":""};
+          myObj.name =   document.getElementById("n1").value;  
+          myObj.TEL  =   document.getElementById("TEL").value;  
+          myObj.gender = v1;  
+          var myJSONstr = JSON.stringify(myObj);
+           alert(myJSONstr);
+         /* var ret;
+          ret =  document.getElementById("n1").value;
+          ret = ret + document.getElementById("TEL").value;
+          alert(ret); */
+        }
+          
+          //  document.getElementById("demo").innerHTML = myFunction(4, 3);
+     </script>
+
+</head>
+<body >
+   
+    
+        <h2>訂購表在這邊哦~~~</h2>
+        <br>
+        姓名:<input id="n1" type="text"  name="name" size="18"><br>
+
+        <br>
+        電話:<input id="TEL" type="text"  name="TEL" size="20"><br>
+
+        <br>
+        性別:
+        <input id="g1"  type="radio"  name="gender" value="male">男生
+        <input id="g2"  type="radio"  name="gender" value="female">女生
+        <input id="g3"  type="radio"  name="gender" value="unknow">未知<br>
+        <button onclick="getData()"   style="height: 29px; width: 103px">送出</button>
+       
+     
+
+</body>
+</html>

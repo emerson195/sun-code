@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>630美食工坊</title>
+
+</head>
+<body ">
+    <form id="orderForm1" action="RQ_RS.aspx" method="post"  name="form1" >
+
+        <h1><b>哈囉!!!歡迎來到630美食工坊</b></h1>
+        <h1>這裡有各式各樣的美食可以選擇</h1>
+        <h1>我們的招牌美食是"熔岩爆漿巧克力蛋糕"</h1>
+        <h2>下午茶新感受~口口爆漿的好滋味~熔岩爆漿巧克力蛋糕!!貼心製作成小巧可愛的杯子狀，
+                一次吃一個，不會太多、太膩。一口咬下，您就會感受到那苦甜又濃郁的內餡，直接湧入口中，愈嚼愈香、濃，愈吃愈覺得滿足唷!!</h2>
+        <img src="https://pic.pimg.tw/nw0912/1458008279-1685718269.jpg?v=1458008288">
+
+
+        <br>
+        <h2>訂購表在這邊哦~~~</h2>
+        <br>
+        姓名:<input type="text"  name="name" size="8"><br>
+
+        <br>
+        電話:<input type="text"  name="TEL" size="20"><br>
+
+        <br>
+        地址:<input type="text"  name="address" size="50"><br>
+
+        <br>
+        電子信箱:<input type="text" name="email" size="40"><br>
+
+        <br>
+        預購商品:<br>
+        熔岩爆漿巧克力蛋糕(一組4個)
+            <select name="cakeAmount">
+                <option value="1" selected>1組($100)</option>
+                <option value="2">2組($196)</option>
+                <option value="3">3組($288)</option>
+                <option value="4">4組($376)</option>
+                <option value="5">5組($460)</option>
+                <option value="6">6組($540)</option>
+                <option value="7">7組($616)</option>
+                <option value="8">8組($688)</option>
+                <option value="9">9組($756)</option>
+                <option value="10">10組($800)</option>
+            </select><br>
+
+        <br>
+        付款方式:<input type="radio" required="required" name="payMethod" value="credictCard">信用卡
+           <input type="radio" required="required" name="payMethod" value="supeerMarket">超商代碼
+            <input type="radio" required="required" name="payMethod" value="homePay">貨到付款
+            <input type="radio" required="required" name="payMethod" value="transferMoney">轉帳<br>
+        <br>
+        備註:<br>
+        <textarea name="other" cols="25" rows="3"></textarea>
+        <br>
+        <button  style="height: 29px; width: 103px">送出</button>
+       
+        </form>
+     
+
+</body>
+</html>

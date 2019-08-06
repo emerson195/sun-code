@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+  
+ <style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+  
+<script src="HTTP2019.js"></script>
+</head>
+<body>
+
+   
+        <input id="Button1" onclick="getData();"  type="button" value="getData" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+        <table id = "t1"   />
+       
+
+</body>
+        <script>
+            
+            
+            function getData() {
+                //HTTPGetData("http://203.64.84.214:8003/httptest/Get.aspx?id=miPersondata");
+                HTTPGetData("http://203.64.84.113/JSON/Get.aspx?id=newAns");
+            }
+            function callBack() {
+                showData();
+            }
+            function showData() {
+                // alert(ret);
+                // ret defined in HTTP2019.js for keep the response value
+                var myObj = JSON.parse(ret);
+           
+               // var obj = { "name": "", "locaton": "", "ans": "" };
+                var tableStr = "<tr><th>name</th> <th >location</th><th>ans</th></tr>";
+
+                for (i = 0; i < myObj.length; i++) {
+                     // alert(myObj[i].name);
+                    var trStr = "<tr>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].name;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].location;
+                    trStr = trStr + "</td>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + myObj[i].ans;
+                    trStr = trStr + "</td>";
+
+
+                    trStr = trStr + "</tr>";
+                    tableStr = tableStr + trStr;
+                 //   alert(tableStr);
+                }
+            
+                // 表格字串字串在id為"t1"的"table"標簽内
+                document.getElementById("t1").innerHTML = tableStr;
+
+               
+            }
+        </script>
+</html>

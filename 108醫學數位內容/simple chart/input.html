@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <title>Question</title>
+    <script src="Cookie.js"></script> 
+   <script src="HTTP2019.js"></script>
+ 
+    <style type="text/css">
+        #ans {
+            width: 825px;
+        }
+    </style>
+ 
+</head>
+<body>  
+        <p  id="myName"></p> 
+        <p>漫長暑假，你在做甚麼</p>      
+        <input type="text" id="ans" value="" />
+        <br/>  <br/>
+        <button onclick="myFunction()">save Data</button>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <button onclick="myFunction2()">view result</button>
+
+</body>
+       <script>
+           var a;
+      
+           var obj ={"name": "", "location":"", "ans":""};
+
+           obj.location = getCookie("stdLocation");
+          // alert(obj.location);
+           obj.name = getCookie("stdName");
+          // alert(obj.name);
+           document.getElementById("myName").innerHTML = obj.name + "您好";
+
+           function myFunction() {
+               obj.ans = document.getElementById("ans").value;
+
+               var myJSONstr = JSON.stringify(obj);
+                HTTPPostData("http://203.64.84.113/JSON/Post.aspx?id=newAns", myJSONstr);
+           }
+           function myFunction2() {
+               window.open("getData2Table.html");
+           }
+    </script>
+
+
+</html>
